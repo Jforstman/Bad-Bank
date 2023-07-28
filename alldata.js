@@ -4,10 +4,10 @@ function AllData() {
     console.log(ctx);
     return (
       <>
-        <h5>All Data in Store</h5>
+        <h1 className="bg-danger text-white">All User Data</h1>
         {ctx.users.map((user, index) => (
-          <div key={index} className="card">
-            <div className="card-body">
+          <div key={index} className="card text-white">
+          <div className="card-body bg-danger">
               <h6>Name: {user.name}</h6>
               <p>Email: {user.email}</p>
               <p>Password: {user.password}</p>

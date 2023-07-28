@@ -41,7 +41,7 @@ function Deposit() {
     if (!isNaN(amount) && amount > 0) {
       const updatedUsers = [...ctx.users]; // Create a copy of the users array
       updatedUsers[index].balance += amount; // Update the balance for the specified user
-      ctx.setUsers(updatedUsers);
+      //ctx.setUsers(updatedUsers);
       // Reset the depositAmount state after successful deposit
       setDepositAmount('');
     } else {
@@ -51,15 +51,12 @@ function Deposit() {
 
   return (
     <>
-      <span className="placeholder col-12 bg-dark"></span>
-      <h1>Deposit</h1>
-      <span className="placeholder col-12 bg-dark"></span>
+      <h1 className="bg-danger text-white">Deposit</h1>
       {ctx.users.map((user, index) => (
-        <div key={index} className="card">
-          <div className="card-body">
+        <div key={index} className="card text-white">
+          <div className="card-body bg-danger">
             <h6>Name: {user.name}</h6>
             <p>Email: {user.email}</p>
-            <p>Password: {user.password}</p>
             <p>Balance: {user.balance}</p>
             <input
               type="number" // Use type "number" for numeric input
@@ -72,7 +69,7 @@ function Deposit() {
           </div>
         </div>
       ))}
-    </>
+      </>
   );
 }
 
