@@ -42,10 +42,12 @@ function Withdraw() {
 
     if (!isNaN(amount) && amount > 0) {
       const updatedUsers = [...ctx.users]; // Create a copy of the users array
+      
 
       // Check if the withdrawal amount is less than or equal to the user's balance
       if (amount <= updatedUsers[index].balance) {
         updatedUsers[index].balance -= amount; // Update the balance for the specified user
+        alert('Successful withdrawal!');
         //ctx.setUsers(updatedUsers);
         // Reset the withdrawAmount state after a successful withdrawal
         setWithdrawAmount('');

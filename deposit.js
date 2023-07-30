@@ -41,9 +41,11 @@ function Deposit() {
     if (!isNaN(amount) && amount > 0) {
       const updatedUsers = [...ctx.users]; // Create a copy of the users array
       updatedUsers[index].balance += amount; // Update the balance for the specified user
+      alert('Successful Deposit!');
       //ctx.setUsers(updatedUsers);
       // Reset the depositAmount state after successful deposit
       setDepositAmount('');
+      
     } else {
       alert('Please enter a valid positive number for the deposit amount.');
     }
